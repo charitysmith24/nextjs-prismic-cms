@@ -4,7 +4,7 @@ import localFont from '@next/font/local'
 //import { Inter } from 'next/font/google'
 
 //const inter = Inter({ subsets: ['latin'] })
-const giFont = localFont({
+const giFont400 = localFont({
   src: [
     {
       path: './fonts/G.I.-400.woff2',
@@ -16,6 +16,12 @@ const giFont = localFont({
       weight: '400',
       style: 'italic',
     },
+  ],
+  variable: '--font-giFont400'
+});
+
+const giFont530 = localFont({
+  src: [
     {
       path: './fonts/G.I.-530.woff2',
       weight: '530',
@@ -26,6 +32,12 @@ const giFont = localFont({
       weight: '530',
       style: 'italic',
     },
+  ],
+  variable: '--font-giFont530'
+});
+
+const giFont750 = localFont({
+  src: [
     {
       path: './fonts/G.I.-750.woff2',
       weight: '750',
@@ -37,7 +49,7 @@ const giFont = localFont({
       style: 'italic',
     }
   ],
-  variable: '--font-giFont'
+  variable: '--fong-giFont750'
 })
 
 export const metadata: Metadata = {
@@ -52,7 +64,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${giFont.variable}`}>{children}</body>
+      <body className={`${giFont400.variable}, ${giFont530.variable}, ${giFont750.variable}`}>{children}</body>
     </html>
   )
 }

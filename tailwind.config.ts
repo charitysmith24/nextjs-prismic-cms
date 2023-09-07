@@ -8,7 +8,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      
+      fontFamily: {
+        gi400: ['var(--font-giFont400)'],
+        gi530: ['var(--font-giFont530)'],
+        gi750: ['var(--font-giFont750)']
+      }
     },
   },
   plugins: [],
