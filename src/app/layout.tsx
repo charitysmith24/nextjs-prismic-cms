@@ -10,39 +10,34 @@ const giFont = localFont({
       path: './fonts/G.I.-400.woff2',
       weight: '400',
       style: 'normal',
-      variable: '--font-gi400',
     },
     {
       path: './fonts/G.I.-400Italic.woff2',
       weight: '400',
       style: 'italic',
-      variable: '--font-gi400Italic',
     },
     {
       path: './fonts/G.I.-530.woff2',
       weight: '530',
       style: 'normal',
-      variable: '--font-gi530',
     },
     {
       path: './fonts/G.I.-530Italic.woff2',
       weight: '530',
       style: 'italic',
-      variable: '--font-gi530Italic',
     },
     {
       path: './fonts/G.I.-750.woff2',
       weight: '750',
       style: 'normal',
-      variable: '--font-gi750',
     },
     {
       path: './fonts/G.I.-750Italic.woff2',
       weight: '750',
       style: 'italic',
-      variable: '--font-gi750Italic',
     }
-  ]
+  ],
+  variable: '--font-giFont'
 })
 
 export const metadata: Metadata = {
@@ -57,7 +52,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${giFont.variable}`}>{children}</body>
     </html>
   )
 }
