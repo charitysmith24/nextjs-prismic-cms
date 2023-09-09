@@ -64,7 +64,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${giFont400.variable}, ${giFont530.variable}, ${giFont750.variable}`}>{children}</body>
+      <body className={`clsx(${giFont400.variable}, ${giFont530.variable}, ${giFont750.variable})`}>{children}</body>
     </html>
   )
 }
