@@ -2,6 +2,8 @@ import './globals.css'
 import type { Metadata, ResolvingMetadata } from 'next'
 import localFont from '@next/font/local'
 import { createClient } from '@/prismicio'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 const giFont400 = localFont({
   src: [
@@ -54,13 +56,13 @@ const giFont750 = localFont({
 export async function generateMetadata(): Promise<Metadata> { 
   const client = createClient();
 
-  const page = await client.getSingle("settings");
+  const settings = await client.getSingle("settings");
 
   return {
-    title: page.data.site_title || "Flowrise Fallback",
-    description: page.data.meta_description || "Flowrise is the relaxing app for you.",
+    title: settings.data.site_title || "Flowrise Fallback",
+    description: settings.data.meta_description || "Flowrise is the relaxing app for you.",
     openGraph: {
-      images: [page.data.og_image.url || ""],
+      images: [settings.data.og_image.url || ""],
     },
   }
 }
@@ -72,7 +74,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`clsx(${giFont400.variable}, ${giFont530.variable}, ${giFont750.variable})`}>{children}</body>
+      <body className={`clsx(${giFont400.variable}, ${giFont530.variable}, ${giFont750.variable})`}>
+        <Header/>
+        {children}
+        <Footer/>
+        </body>
     </html>
   )
 }
