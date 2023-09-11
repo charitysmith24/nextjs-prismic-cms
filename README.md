@@ -33,3 +33,15 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 # nextjs-prismic-cms
+
+  YOUR REPOSITORY
+    Page Builder         https://ce-nextjs-prismic.prismic.io
+    API                  https://ce-nextjs-prismic.cdn.prismic.io/api/v2
+
+  RESOURCES
+    Documentation        https://prismic.dev/init/next-11-13
+    Getting help         https://community.prismic.io
+
+  GETTING STARTED
+    Run Slice Machine    npm run slicemachine
+    Run your project     npm run dev
