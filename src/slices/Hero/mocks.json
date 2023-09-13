@@ -9,7 +9,7 @@
 					{
 						"type": "heading1",
 						"content": {
-							"text": "This is my text!",
+							"text": "Productivity that flows with your life.",
 							"spans": []
 						},
 						"direction": "ltr"
@@ -22,15 +22,17 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Ea dolor consectetur quis reprehenderit quis laboris minim."
-						}
+							"text": "Unleash your potential by harmonizing your daily tasks and habits with your unique energy rhythms.",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			},
 			"button_text": {
 				"__TYPE__": "FieldContent",
-				"value": "everybody",
-				"type": "Text"
+				"type": "Text",
+				"value": "Try it for free"
 			},
 			"button_link": {
 				"__TYPE__": "LinkContent",
