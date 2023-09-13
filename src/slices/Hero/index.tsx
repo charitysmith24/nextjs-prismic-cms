@@ -1,6 +1,24 @@
 import { Content } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { JSXMapSerializer, PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import Bounded from "@/components/Bounded";
+import Button from "@/components/Button";
+import Heading from "@/components/Heading";
+
+const components: JSXMapSerializer = {
+  heading1: ({ children }) => (
+    <Heading 
+      as="h1" 
+      size="xl" 
+      className="md:mb-8 mb-4 mt-12 first:mt-0 last:mb-0"
+      >
+        {children}
+    </Heading>
+  ),
+  paragraph: ({ children }) => (
+    <p className="text-2xl text-center font-normal leading-10 font-gi400 text-slate-600 mb-4 md:mb-8 max-w-md">{children}</p>
+  ),
+}
 
 /**
  * Props for `Hero`.
@@ -12,30 +30,23 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
  */
 const Hero = ({ slice }: HeroProps): JSX.Element => {
   return (
-    <section
-    className="px-4 py-10 md:py-14 md:px-6 lg:py-16"
+    <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="mx-auto w-full max-w-6xl">
         <div className="grid grid-cols-1 place-items-center text-center">
-          <PrismicRichText field={slice.primary.heading} components={{
-            heading1: ({children}) => (
-            <h1 className="text-4xl md:text-7xl font-gi530 font-bold leading-tight tracking-tight text-slate-700">{children}</h1>
-          )
-          }}/>
-          <PrismicRichText field={slice.primary.body} components={{
-            paragraph: ({children}) => (
-              <p className="text-2xl text-center font-normal leading-10 font-gi400 text-slate-600 mb-4 md:mb-8 max-w-md">{children}</p>
-            )
-          }}/>
-          <PrismicNextLink field={slice.primary.button_link} className="block w-fit bg-cyan-700 hover:bg-cyan-800 transition-color duration-200 ease-in-out py-3 px-12 rounded-full font-gi400 text-white font-bold text-base tracking-wider mb-8 md:mb-10">
+          <PrismicRichText 
+            field={slice.primary.heading} 
+            components={components}/>
+          <PrismicRichText 
+            field={slice.primary.body} 
+            components={components}/>
+          <Button field={slice.primary.button_link} className="mb-8 md:mb-10">
             {slice.primary.button_text}
-          </PrismicNextLink>
+          </Button>
           <PrismicNextImage field={slice.primary.image} className="drop-shadow-xl max-w-4xl w-full"/>
         </div>
-      </div>
-    </section>
+    </Bounded>
   );
 };
 
