@@ -3,7 +3,6 @@ import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";
 import {createClient} from "@/prismicio";
 import { Content, isFilled } from "@prismicio/client";
-import { TEMPORARY_REDIRECT_STATUS } from "next/dist/shared/lib/constants";
 import { PrismicNextImage } from "@prismicio/next";
 
 const components: JSXMapSerializer = {
